@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,10 +21,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-w0jxbs@_osz#24ge)_w+(u)geys5q%!w5b^9ne^ejh#vn&n@sl'
+SECRET_KEY = config("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config("DEBUG")
 
 ALLOWED_HOSTS = []
 
@@ -76,11 +77,12 @@ WSGI_APPLICATION = 'RenovationTrackerWebApp.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'renovationtrackerdb', #ENTER NAME AFTER CREATING DATABASE IN MYSQL WORKBENCH
-        'USER': 'root',
-        'PASSWORD': '##################', #ENTER PASSWORD BE SURE TO DELETE BEFORE COMMITING TO GITHUB
-        'PORT': 3306,
-        'HOST': '127.0.0.1', #
+        #'NAME': config("NAME"),
+        'NAME': 'renovationtrackerdb',
+        'USER': config("DB_USER"),
+        'PASSWORD': config("DB_PASSWORD"), 
+        'PORT': config("DB_PORT"),
+        'HOST': config("DB_HOST"), 
         
         
         
