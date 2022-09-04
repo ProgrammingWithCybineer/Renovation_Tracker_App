@@ -1,5 +1,5 @@
 # Renovation_Tracker_App
-This is a Web based appilcation that will allow users to keep track of the renovationsthey have done to their home or business.  
+This is a Web based appilcation that will allow users to keep track of the renovations they have done to their home or business. The user will also be able to upload before and after photos. 
 
 ### Technologies
   •	Python
