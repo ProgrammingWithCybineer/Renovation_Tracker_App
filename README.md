@@ -12,8 +12,12 @@ This is a Web based appilcation that will allow users to keep track of the renov
   
 ## Current Features
 
-TBD 
-    
+  •	User authentication
+  
+  •	Web interface
+  
+  •	Photo upload and storage
+  
 ## Future Features
 
 TBD
