@@ -23,6 +23,8 @@ This is a Web based appilcation that will allow users to keep track of the renov
 TBD
   
  ## Requirements
+  •	Python 3.8 or higher
+  
   •	Django
   
   •	MySQL Workbench
