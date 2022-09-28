@@ -7,7 +7,7 @@ from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
-    return HttpResponse("This is the index page")
+    return render(request, 'WebAppRenoTracker/index.html')
 
 
 def currentProjects(request):
@@ -15,7 +15,7 @@ def currentProjects(request):
 
 
 def newProject(request):
-    return HttpResponse ("Here is your New project")
+    return  ("Here is your New project")
 
 def allProjects(request):
     return HttpResponse ("Here is All of your project")

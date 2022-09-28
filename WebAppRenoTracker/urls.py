@@ -12,3 +12,4 @@ urlpatterns = [
     path('newProject', views.newProject, name="newProject"),
 
 ]
+
