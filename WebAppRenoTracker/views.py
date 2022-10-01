@@ -10,6 +10,10 @@ def index(request):
     return render(request, 'WebAppRenoTracker/index.html')
 
 
+def home(request):
+    return render(request, 'WebAppRenoTracker/home.html')
+
+
 def currentProjects(request):
     return HttpResponse ("Here is your current project")
 
