@@ -1,8 +1,19 @@
 {% extends 'base.html' %}
+{% block title %} Add A New Project{% endblock %}
 
 
 {% block content%}
 
+<h1>Add New Project</h1>
+<br /> <br />
+<div class="mb-3">
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
 
+        <input class="btn btn-primary" type="submit" value="Add New Project">
+
+    </form>
+</div>
 
 {% endblock %}

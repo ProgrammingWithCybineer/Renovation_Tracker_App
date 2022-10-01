@@ -10,8 +10,8 @@
 
 <ul>
 {% for newproject in object_list %}
-    <li><a href= "{% url 'project-details' newproject.pk %}">{{ newproject.project_title }}</a><br/>
-    {{ newproject.author }}</li>
+    <li><a href= "{% url 'project-details' newproject.pk %}">{{ newproject.project_title }}</a> - {{ newproject.updated_By }}<br/>
+    {{ newproject.house_Level }} - {{ newproject.room }}</li>
 {% endfor %}
 </ul>
 

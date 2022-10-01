@@ -25,7 +25,7 @@ class newProject(models.Model):
     #title of Renovation entry
     project_title = models.CharField(max_length=255)
     #house level working on
-    houseLevel = models.CharField(max_length=255)
+    house_Level = models.CharField(max_length=255)
     #room of house renovated
     room = models.CharField(max_length=255)
     #work performed
@@ -37,16 +37,22 @@ class newProject(models.Model):
     #notes section
     notes = models.TextField()
     #Entry added by. For database purposes
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    updated_By = models.ForeignKey(User, on_delete=models.CASCADE)
     #image loader option
-    beforePhoto1 = models.ImageField(null=True, blank=True, upload_to="images/")
-    beforePhoto2 = models.ImageField(null=True, blank=True, upload_to="images/")
-    beforePhoto3 = models.ImageField(null=True, blank=True, upload_to="images/")
-    beforePhoto4 = models.ImageField(null=True, blank=True, upload_to="images/")
-    afterPhoto1 = models.ImageField(null=True, blank=True, upload_to="images/")
-    afterPhoto2 = models.ImageField(null=True, blank=True, upload_to="images/")
-    afterPhoto3 = models.ImageField(null=True, blank=True, upload_to="images/")
-    afterPhoto4 = models.ImageField(null=True, blank=True, upload_to="images/") 
+    before_Photo1 = models.ImageField(null=True, blank=True, upload_to="images/")
+    before_Photo2 = models.ImageField(null=True, blank=True, upload_to="images/")
+    before_Photo3 = models.ImageField(null=True, blank=True, upload_to="images/")
+    before_Photo4 = models.ImageField(null=True, blank=True, upload_to="images/")
+    after_Photo1 = models.ImageField(null=True, blank=True, upload_to="images/")
+    after_Photo2 = models.ImageField(null=True, blank=True, upload_to="images/")
+    after_Photo3 = models.ImageField(null=True, blank=True, upload_to="images/")
+    after_Photo4 = models.ImageField(null=True, blank=True, upload_to="images/") 
     def __str__(self):
-        return self.project_title + ' | ' + str(self.author)
+        return self.project_title + ' | ' + str(self.updated_By)
     
+
+    def get_absolute_url(self):
+        #redirecting to details page
+        #return reverse('project-details', args=(str(self.id)))
+        #redirecting to home page
+        return reverse('home')

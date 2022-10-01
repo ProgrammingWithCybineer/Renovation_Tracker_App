@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, CreateView
 from .models import newProject
-
+from .forms import NewProjectForm
 
 
 
@@ -24,7 +24,11 @@ class ProjectDetailView(DetailView):
     template_name = 'project_details.html'
 
 
-
+class NewProject(CreateView):
+    model = newProject
+    form_class = NewProjectForm
+    template_name = 'new_project.html'
+    #fields = '__all__'
 
 
 
@@ -32,8 +36,7 @@ def currentProjects(request):
     return HttpResponse ("Here is your current project")
 
 
-def newProject(request):
-    return  ("Here is your New project")
+
 
 def allProjects(request):
     return HttpResponse ("Here is All of your project")
