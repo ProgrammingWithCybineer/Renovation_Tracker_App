@@ -19,8 +19,11 @@ Fields App needs
  after pics photos (limit 4)
  '''   
 class newProject(models.Model):
+    #title of website tab in browser
+    #project_tag = models.CharField(max_length=255, default="No Tag")
+    
     #title of Renovation entry
-    title = models.CharField(max_length=255)
+    project_title = models.CharField(max_length=255)
     #house level working on
     houseLevel = models.CharField(max_length=255)
     #room of house renovated
@@ -33,7 +36,7 @@ class newProject(models.Model):
     company = models.CharField(max_length=255)
     #notes section
     notes = models.TextField()
-    #Entry added by
+    #Entry added by. For database purposes
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     #image loader option
     beforePhoto1 = models.ImageField(null=True, blank=True, upload_to="images/")
@@ -45,5 +48,5 @@ class newProject(models.Model):
     afterPhoto3 = models.ImageField(null=True, blank=True, upload_to="images/")
     afterPhoto4 = models.ImageField(null=True, blank=True, upload_to="images/") 
     def __str__(self):
-        return self.title + ' | ' + str(self.author)
+        return self.project_title + ' | ' + str(self.author)
     

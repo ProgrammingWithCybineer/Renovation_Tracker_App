@@ -16,12 +16,12 @@ def index(request):
 
 class HomeView(ListView):
     model = newProject
-    template_name = 'WebAppRenoTracker/home.html'
+    template_name = 'home.html'
 
 
 class ProjectDetailView(DetailView):
     model = newProject
-    template_name = 'WebAppRenoTracker/project_details.html'
+    template_name = 'project_details.html'
 
 
 
