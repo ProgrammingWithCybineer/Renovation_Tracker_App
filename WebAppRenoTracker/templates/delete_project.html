@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %} Delete Existing Project{% endblock %}
+
+
+{% block content%}
+
+<h1>Delete Project</h1>
+<br /> <br />
+<h3>Delete: {{ newproject.project_title }}</h3>
+
+<br/>
+<div class="mb-3">
+    <form method="POST">
+        {% csrf_token %}
+        <strong>Are you sure you want to delete this project?</strong><br/>
+        <br/>
+        <input class= "btn btn-danger" type="submit" value="Delete Project">
+
+    </form>
+</div>
+
+{% endblock %}

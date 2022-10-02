@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
-{% block title %} Add A New Project{% endblock %}
+{% block title %} Update Existing Project{% endblock %}
 
 
 {% block content%}
 
-<h1>Add New Project</h1>
+<h1>Update Project</h1>
 <br /> <br />
 
 <div class="mb-3">
@@ -12,7 +12,7 @@
         {% csrf_token %}
         {{ form.as_p }}
 
-        <input class="btn btn-primary" type="submit" value="Add New Project">
+        <input class="btn btn-primary btn-sm" type="submit" value="Update Project">
 
     </form>
 </div>

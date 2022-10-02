@@ -20,25 +20,54 @@ class NewProjectForm(forms.ModelForm):
             'company': forms.TextInput(attrs={'class': 'form-control'}),
             'notes': forms.Textarea(attrs={'class': 'form-control'}),
             'updated_By': forms.Select(attrs={'class': 'form-control'}),
-            'before_Photo1': forms.ImageField(),
-            'before_Photo2': forms.ImageField(),
-            'before_Photo3': forms.ImageField(),
-            'before_Photo4': forms.ImageField(),
-            'after_Photo1': forms.ImageField(),
-            'after_Photo2': forms.ImageField(),
-            'after_Photo3': forms.ImageField(),
-            'after_Photo4': forms.ImageField(),
+            #'before_Photo1': forms.ImageField(),
+            #'before_Photo2': forms.ImageField(),
+            #'before_Photo3': forms.ImageField(),
+            #'before_Photo4': forms.ImageField(),
+            #'after_Photo1': forms.ImageField(),
+            #'after_Photo2': forms.ImageField(),
+            #'after_Photo3': forms.ImageField(),
+            #'after_Photo4': forms.ImageField(),
  
 		}
+
+
+
+class UpdateProjectForm(forms.ModelForm):
+    class Meta:
+        model = newProject    
+        fields = ('project_title', 'house_Level', 'room', 'work_Being_Done', 'price', 'company', 'notes', 
+                  'after_Photo1', 'after_Photo2', 'after_Photo3', 'after_Photo4')
+        
+        widgets = {
+            'project_title': forms.TextInput(attrs={'class': 'form-control'}),
+			'house_Level': forms.TextInput(attrs={'class': 'form-control'}),
+            'room': forms.TextInput(attrs={'class': 'form-control'}),   
+            'work_Being_Done': forms.TextInput(attrs={'class': 'form-control'}),
+            'price': forms.TextInput(attrs={'class': 'form-control'}),
+            'company': forms.TextInput(attrs={'class': 'form-control'}),
+            'notes': forms.Textarea(attrs={'class': 'form-control'}),
+            #'after_Photo1': forms.ImageField(),
+            #'after_Photo2': forms.ImageField(),
+            #'after_Photo3': forms.ImageField(),
+            #'after_Photo4': forms.ImageField(),
+ 
+		}
+
+
+
+
+
+
+
+
+
+
 
 
 class SignUpForm(forms.Form):
     pass
     
-    
-    
-
-
 
 class PasswordChangingForm(PasswordChangeForm):
 	old_password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control', 'type':'password'}))
