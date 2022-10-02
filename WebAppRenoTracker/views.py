@@ -18,7 +18,7 @@ def index(request):
 class HomeView(ListView):
     model = newProject
     template_name = 'home.html'
-    #ordering = ['-id'] # will change to date field later
+    ordering = ['project_start_date'] # will change to date field later
 
 
 class ProjectDetailView(DetailView):

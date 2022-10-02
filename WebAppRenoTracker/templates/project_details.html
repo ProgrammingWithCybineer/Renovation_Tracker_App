@@ -7,17 +7,19 @@
 <h1>{{newproject.project_title}}</h1>
 
 <small>By: {{newproject.updated_By}}</small> 
-<br/> 
+<br/>
+<label for="colFormLabelSm" class="col-form-label col-form-label-sm">Project Start Date: </label> {{newproject.project_start_date}}
+<br/>
     <a href="{% url 'update-project' newproject.pk %}" class="btn btn-secondary btn-sm">Update Project Details</a> 
     <a href="{% url 'delete-project' newproject.pk %}" class="btn btn-danger btn-sm">Delete Project</a>
 <br/>
 
-{{ newproject.houseLevel }}<br/>
-{{ newproject.room }}
-{{ newproject.work_Being_Down }}<br/>
-{{ newproject.price }}<br/>
-{{ newproject.company }}<br/>
-{{ newproject.notes }}<br/>
+<label for="colFormLabelSm" class="col-form-label col-form-label-sm">House Level: </label> {{ newproject.house_Level }}<br/>
+<label for="colFormLabelSm" class="col-form-label col-form-label-sm">Room Of House: </label> {{ newproject.room }}<br/>
+<label for="colFormLabelSm" class="col-form-label col-form-label-sm">Work Being Performed: </label> {{ newproject.work_Being_Done}}<br/>
+<label for="colFormLabelSm" class="col-form-label col-form-label-sm">Estimated Price: </label> {{ newproject.price }}<br/>
+<label for="colFormLabelSm" class="col-form-label col-form-label-sm">Company: </label> {{ newproject.company }}<br/>
+<label for="colFormLabelSm" class="col-form-label col-form-label-sm">Notes/Updates: </label> {{ newproject.notes }}<br/>
 
 <br/>
 <a href="{% url 'home' %}" class="btn btn-secondary">BACK</a>

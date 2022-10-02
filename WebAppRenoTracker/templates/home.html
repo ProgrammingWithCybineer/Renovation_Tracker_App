@@ -7,19 +7,25 @@
 
 <h1>List Of All Current Project</h1>
 
-
+<div class=" container">
 <ul>
 {% for newproject in object_list %}
-    <li><a href= "{% url 'project-details' newproject.pk %}">{{ newproject.project_title }}</a>
-        - {{ newproject.updated_By }} <br/>
-        {{ newproject.house_Level }} - {{ newproject.room }}  <br/>
-        <a href="{% url 'update-project' newproject.pk %}" class="btn btn-secondary btn-sm">Update Project Details</a>  
-        <a href="{% url 'delete-project' newproject.pk %}" class="btn btn-danger btn-sm">Delete Project</a> <br/><br/>
-        <br/>
+    <li>
+        <label for="colFormLabelSm" class="col-form-label col-form-label-sm">Project Title: </label> 
+            <a href= "{% url 'project-details' newproject.pk %}">{{ newproject.project_title }}</a>
+            - <label for="colFormLabelSm" class="col-form-label col-form-label-sm">Added By: </label>
+                {{ newproject.updated_By }} <br/>
+            <label for="colFormLabelSm" class="col-form-label col-form-label-sm">House Level: </label>
+                {{ newproject.house_Level }} <br/> 
+            <label for="colFormLabelSm" class="col-form-label col-form-label-sm">Room: </label> {{ newproject.room }}
+            <br/>
+            <a href="{% url 'update-project' newproject.pk %}" class="btn btn-secondary btn-sm">Update Project Details</a>  
+            <a href="{% url 'delete-project' newproject.pk %}" class="btn btn-danger btn-sm">Delete Project</a> <br/><br/>
+            <br/>
     </li>
 {% endfor %}
 </ul>
-
+</div>
 
 
 

@@ -39,7 +39,7 @@ class newProject(models.Model):
     #notes section
     notes = models.TextField()
     #date project completed  
-    project_completion_date = models.DateField()
+    project_completion_date = models.DateField(null=True)
     #Entry added by. For database purposes
     updated_By = models.ForeignKey(User, on_delete=models.CASCADE)
     #image loader option
