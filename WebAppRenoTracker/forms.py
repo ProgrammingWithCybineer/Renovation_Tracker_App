@@ -50,7 +50,7 @@ class UpdateProjectForm(forms.ModelForm):
             'price': forms.TextInput(attrs={'class': 'form-control'}),
             'company': forms.TextInput(attrs={'class': 'form-control'}),
             'notes': forms.Textarea(attrs={'class': 'form-control'}),
-            'project_completion_date': forms.DateInput(format=('%m/%d/%Y'), attrs={'class':'form-control', 'placeholder':'Select a date', 'type': 'date'}),
+            'project_completion_date': forms.DateInput(format=('%m/%d/%Y'), attrs={'class':'form-control', 'placeholder':'Select a date', 'type': 'date', 'null': 'True'}),
             #'after_Photo1': forms.ImageField(),
             #'after_Photo2': forms.ImageField(),
             #'after_Photo3': forms.ImageField(),
