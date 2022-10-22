@@ -59,16 +59,6 @@ class UpdateProjectForm(forms.ModelForm):
 		}
 
 
-
-
-
-
-
-
-
-
-
-
 class SignUpForm(forms.Form):
     pass
     
